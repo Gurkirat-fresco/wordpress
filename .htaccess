@@ -1,3 +1,26 @@
+# Redirect index to Google
+# RewriteRule ^$ https://theradiantsmiles.com/ [R=301,L]
+# Redirect specific page to Google
+# RedirectMatch 301 ^/wordpress/test/$ https://www.google.com
+# RedirectMatch 301 ^/wordpress/test/$ /wordpress/blocks/
+
+#<files wp-config.php>
+#order allow,deny
+#deny from all
+#</files>
+# <Files .htaccess>
+# order allow,deny
+# deny from all
+# </Files>
+
+<Files wp-login.php>
+order deny,allow
+deny from all
+allow from 203.134.200.118
+ErrorDocument 403 "<html><head><style>body { font-family: Arial, sans-serif; background-color: #f8f8f8; text-align: center; padding: 100px; } h1 { color: red; } p { color: #666; } </style></head><body><h1>Access Denied</h1><p>Sorry, but access to this area is restricted.</p></body></html>"
+</Files>
+
+
 
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
